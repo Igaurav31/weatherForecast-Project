@@ -1,1 +1,22 @@
-hello
+https.get(link , "JSON", function(response){
+        // var data;
+        // response.on("data", function(chunk) {
+        //   if (!data) {
+        //     data = chunk;
+        //   } else {
+        //     data += chunk;
+        //   }
+        // });
+    
+        // response.on("end", function() {
+        //     const forcastinfo=JSON.parse(data);
+        //     console.log(forcastinfo);
+        //     const hourly = forcastinfo.hourly;
+        //     res.write(hourly);
+        //     res.send();
+        //     // res.sendStatus(forcastinfo.hourly);
+        // });
+        response.on("data",function(data){
+          const weatherdata = JSON.parse(data);
+        })
+    });
