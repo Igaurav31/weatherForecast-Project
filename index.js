@@ -7,6 +7,7 @@ const https = require("https");
 const { json } = require("express/lib/response");
 const fetch = require('node-fetch');
 app.set('view engine', 'ejs');
+import { unixconvertor } from './functions.js';
 // let sunDate = [":"];
 
 app.get("/", function(req, res){
