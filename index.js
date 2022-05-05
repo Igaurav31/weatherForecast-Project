@@ -6,10 +6,11 @@ app.use(express.static('public'));
 const https = require("https");
 const { json } = require("express/lib/response");
 const fetch = require('node-fetch');
+app.set('view engine', 'ejs');
+// let sunDate = [":"];
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname+"/index.html");
-    
+    res.render("index");
 })
 
 app.post("/", function(req, res){
@@ -26,8 +27,27 @@ app.post("/", function(req, res){
     
     // });
     fetch(link)
-  .then(response => response.json());
-  .then(data => console.log(data));
+  .then(response => response.json())
+  .then(data =>{
+       
+    const sunrise = data.current.sunrise;
+    var sunriseDate = new Date(sunrise * 1000);
+    var sunriseHours = sunriseDate.getHours();
+    var sunriseMinutes = "0" + sunriseDate.getMinutes();
+    var sunriseSeconds = "0" + sunriseDate.getSeconds();
+    var sunriseFormattedTime = sunriseHours + ':' + sunriseMinutes.substr(-2) + ':' + sunriseSeconds.substr(-2);
+    // sunDate.push[sunriseFormattedTime];
+    // // sunDate.forEach(date);
+    // // sunTime=sunDate[i];
+    // sunDate.forEach(element =>{
+    //     sunTime=sunDate[element];
+    // });
+    res.write("<h1>Sunrise time is "+ sunriseFormattedTime+"</h1>");
+    res.send();
+
+  });
+
+  
 
 });
 
