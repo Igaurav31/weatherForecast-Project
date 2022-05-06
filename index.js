@@ -6,8 +6,9 @@ app.use(express.static('public'));
 const https = require("https");
 const { json } = require("express/lib/response");
 const fetch = require('node-fetch');
+const unixconvertor = require("./functions");
 app.set('view engine', 'ejs');
-import { unixconvertor } from './functions.js';
+const convertor = require(__dirname+"/functions.js");
 // let sunDate = [":"];
 
 app.get("/", function(req, res){
@@ -37,13 +38,24 @@ app.post("/", function(req, res){
     var sunriseMinutes = "0" + sunriseDate.getMinutes();
     var sunriseSeconds = "0" + sunriseDate.getSeconds();
     var sunriseFormattedTime = sunriseHours + ':' + sunriseMinutes.substr(-2) + ':' + sunriseSeconds.substr(-2);
+    const sunset = data.current.sunset;
+    var sunsetDate = new Date(sunset * 1000);
+    var sunsetHours = sunsetDate.getHours();
+    var sunsetMinutes = "0" + sunsetDate.getMinutes();
+    var sunsetSeconds = "0" + sunsetDate.getSeconds();
+    var sunsetFormattedTime =sunsetHours + ':' + sunsetMinutes.substr(-2) + ':' + sunsetSeconds.substr(-2);
+    // let sunriseTime = unixconvertor(data.current.sunrise);
     // sunDate.push[sunriseFormattedTime];
     // // sunDate.forEach(date);
     // // sunTime=sunDate[i];
     // sunDate.forEach(element =>{
     //     sunTime=sunDate[element];
     // });
-    res.write("<h1>Sunrise time is "+ sunriseFormattedTime+"</h1>");
+    res.write("<h1>**Current Weather Data**</h1>")
+    res.write("<p>Sunrise time is "+ sunriseFormattedTime +"</p>");
+    res.write("<p>Sunrise time is "+ sunsetFormattedTime +"</p>");
+    res.write("<p>Current tempreture "+data.current.temp+"</p>");
+    
     res.send();
 
   });
