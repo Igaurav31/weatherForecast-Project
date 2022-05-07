@@ -18,6 +18,14 @@ app.get("/", function(req, res){
 app.post("/", function(req, res){
     let cityname = req.body.city;        // get data  
     const appid ="cda42f7250658a1b71b1be2a21958b39";
+
+    const cordinateurl = "http://api.openweathermap.org/geo/1.0/direct?q="+ cityname +"&limit=5&appid="+ appid +"";
+    fetch(cordinateurl)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    
     const link = "https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&appid="+appid+"&units=metric";
     //using https to get / request data from external server
     // https.get(link,function(response){
@@ -28,7 +36,8 @@ app.post("/", function(req, res){
     //     });
     
     // });
-    fetch(link)
+    // https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&appid=cda42f7250658a1b71b1be2a21958b39&units=metric
+    return fetch(link)
   .then(response => response.json())
   .then(data =>{
        
@@ -54,9 +63,16 @@ app.post("/", function(req, res){
     res.write("<h1>**Current Weather Data**</h1>")
     res.write("<p>Sunrise time is "+ sunriseFormattedTime +"</p>");
     res.write("<p>Sunrise time is "+ sunsetFormattedTime +"</p>");
-    res.write("<p>Current tempreture "+data.current.temp+"</p>");
-    
-    res.send();
+    res.write("<p>Current tempreture "+ data.current.temp+"°C</p>");
+    res.write("<p>Feels like "+ data.current.feels_like+"°C</p>");
+    res.write("<p>pressure "+ data.current.pressure+ "hPa</p>");
+    res.write("<p> Humidity "+ data.current.humidity+" %</p>");
+    res.write("<p> clouds "+ data.current.clouds+" %</p>");
+    res.write("<p>weather"+ data.current.weather[0].description+"</p>");
+    let iconurl = "http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png"
+    res.write("<img src="+iconurl+">");
+    res.write()
+    res.send(); 
 
   });
 
