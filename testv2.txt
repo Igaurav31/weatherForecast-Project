@@ -1,28 +1,4 @@
-https.get(link , "JSON", function(response){
-        // var data;
-        // response.on("data", function(chunk) {
-        //   if (!data) {
-        //     data = chunk;
-        //   } else {
-        //     data += chunk;
-        //   }
-        // });
-    
-        // response.on("end", function() {
-        //     const forcastinfo=JSON.parse(data);
-        //     console.log(forcastinfo);
-        //     const hourly = forcastinfo.hourly;
-        //     res.write(hourly);
-        //     res.send();
-        //     // res.sendStatus(forcastinfo.hourly);
-        // });
-        response.on("data",function(data){
-          const weatherdata = JSON.parse(data);
-        })
-    });
-
-  ********changes**********
-  const express = require("express");
+const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -34,6 +10,7 @@ const unixconvertor = require("./functions");
 app.set('view engine', 'ejs');
 const convertor = require(__dirname+"/functions.js");
 // let sunDate = [":"];
+// let coordinate = [{lat: 51.5072, lon:0.1276}];
 
 app.get("/", function(req, res){
     res.render("index");
@@ -42,18 +19,20 @@ app.get("/", function(req, res){
 app.post("/", function(req, res){
     let cityname = req.body.city;        // get data  
     const appid ="cda42f7250658a1b71b1be2a21958b39";
-   
     const link = "https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&appid="+appid+"&units=metric";
-    //using https to get / request data from external server
-    // https.get(link,function(response){
-    //     console.log(response.statusCode);
-    //     response.on("data",function(data){
-    //       const weatherdata = JSON.parse(data);
+    // const coordinatelink = "http://api.openweathermap.org/geo/1.0/direct?q="+query+"&limit=1&appid="+appid+"";
 
-    //     });
-    
+    // fetch(coordinatelink)
+    // .then(response => response.json())
+    // .then(data =>{
+    //     const coords = [{lat : data[0].lat ,
+    //     lon : data[0].lon
+    //     }];
+        
+        
     // });
-    // https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&appid=cda42f7250658a1b71b1be2a21958b39&units=metric
+   
+    
     fetch(link)
   .then(response => response.json())
   .then(data =>{
@@ -70,13 +49,7 @@ app.post("/", function(req, res){
     var sunsetMinutes = "0" + sunsetDate.getMinutes();
     var sunsetSeconds = "0" + sunsetDate.getSeconds();
     var sunsetFormattedTime =sunsetHours + ':' + sunsetMinutes.substr(-2) + ':' + sunsetSeconds.substr(-2);
-    // let sunriseTime = unixconvertor(data.current.sunrise);
-    // sunDate.push[sunriseFormattedTime];
-    // // sunDate.forEach(date);
-    // // sunTime=sunDate[i];
-    // sunDate.forEach(element =>{
-    //     sunTime=sunDate[element];
-    // });
+   
     res.write("<h1>**Current Weather Data**</h1>")
     res.write("<p>Sunrise time is "+ sunriseFormattedTime +"</p>");
     res.write("<p>Sunrise time is "+ sunsetFormattedTime +"</p>");
