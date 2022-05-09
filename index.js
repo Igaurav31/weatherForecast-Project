@@ -6,6 +6,7 @@ app.use(express.static('public'));
 const https = require("https");
 const { json } = require("express/lib/response");
 const fetch = require('node-fetch');
+var _ = require('lodash');
 // const unixconvertor = require("./functions");
 app.set('view engine', 'ejs');
 // const convertor = require(__dirname + "/functions.js");
@@ -13,9 +14,10 @@ app.set('view engine', 'ejs');
 
 
 app.get("/", function (req, res) {
-  res.render("index");
+  let pagename = "";
+  res.render("index",{pagename:pagename});
 })
-
+//reminder:add code which gives user choice to choose between unit 
 app.post("/", function (req, res) {
   let cityname = req.body.city;        // get data  
   const appid = "cda42f7250658a1b71b1be2a21958b39";
@@ -30,6 +32,7 @@ app.post("/", function (req, res) {
       let lon = data[0].lon;
       const link = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + appid + "&units=metric";
       return fetch(link);
+    
 
     })
     .then(responce => responce.json())
@@ -47,29 +50,19 @@ app.post("/", function (req, res) {
       var sunsetMinutes = "0" + sunsetDate.getMinutes();
       var sunsetSeconds = "0" + sunsetDate.getSeconds();
       var sunsetFormattedTime = sunsetHours + ':' + sunsetMinutes.substr(-2) + ':' + sunsetSeconds.substr(-2);
-
-      res.write("<h1>**Current Weather Data**</h1>")
-      res.write("<p>showing forcast in " + cityname + "</p>");
-      res.write("<p>Sunrise time is " + sunriseFormattedTime + "</p>");
-      res.write("<p>Sunrise time is " + sunsetFormattedTime + "</p>");
-      res.write("<p>Current tempreture " + data.current.temp + "°C</p>");
-      res.write("<p>Feels like " + data.current.feels_like + "°C</p>");
-      res.write("<p>pressure " + data.current.pressure + "hPa</p>");
-      res.write("<p> Humidity " + data.current.humidity + " %</p>");
-      res.write("<p> clouds " + data.current.clouds + " %</p>");
-      res.write("<p>weather" + data.current.weather[0].description + "</p>");
-      let iconurl = "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png"
-      res.write("<img src=" + iconurl + ">");
-      res.send();
-
+      // res.redirect("http://localhost:3000/"+"cityname+");
+      // res.redirect("http://localhost:3000");
     });
-
+    
   
 });
 
-app.get("/:cityname",function(req,res){
-
+app.get("/searchloc",function(req,res){
+  
+  res.render("searchloc");
+  
 })
+
 
 
 
