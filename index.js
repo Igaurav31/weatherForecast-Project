@@ -50,7 +50,7 @@ app.post("/", function (req, res) {
       var sunsetMinutes = "0" + sunsetDate.getMinutes();
       var sunsetSeconds = "0" + sunsetDate.getSeconds();
       var sunsetFormattedTime = sunsetHours + ':' + sunsetMinutes.substr(-2) + ':' + sunsetSeconds.substr(-2);
-      // res.redirect("http://localhost:3000/"+"cityname+");
+      // res.redirect("http://localhost:3000/"+"cityname+");4
       // res.redirect("http://localhost:3000");
     });
     
@@ -58,9 +58,15 @@ app.post("/", function (req, res) {
 });
 
 app.get("/searchloc",function(req,res){
+  //use ejs to embed data and refer to onenote to for editing html
+ 
   
-  res.render("searchloc");
-  
+})
+
+app.post("/searchloc", function(req,res){
+  cityname = req.body.city;
+  let iconurl = "http://openweathermap.org/img/wn/"+ data.current.weather[0].icon+"@2x.png"
+  res.render("searchloc",{cityname:cityname, icon:iconurl});
 })
 
 
