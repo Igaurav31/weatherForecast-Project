@@ -1,66 +1,13 @@
 <%- include("header") -%>
-</nav>
-<div class="container">
-  <div class="today_forcast">
-    <div class="location">
-      <div class="time">
-        <div class="current_tempreture">
-          <div class="weather_description">
-            <div class="forcasticon">
-              <img src="" alt="">
-            </div>
-            <div class="mintemp"></div>
-            <div class="maxtemp"></div>
-          </div>
-        </div>
-      </div>
+<div class="card" style="width: 18rem;">
+  <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+  <div class="card-body">
+    <h5 class="card-title"><%=cityname%></h5>
+    <div class="icon">
+      <img src="<%=icon%>" alt="">
     </div>
-  </div>
-  <div class="forecast_container">
-    <p>Todays forecast for {location}</p>
-    <div class="morning">morning</div>
-      <div class="morning_temp">
-        <div class="moring_temp_icon">
-          <img src="" alt="">
-          <div class="precipitation">
-            {} %
-          </div>
-        </div>
-      </div>
-  
-    <div class="afternoon">afternoon</div>
-      <div class="afternoon_temp">
-        <div class="afternoon_temp_icon">
-          <img src="" alt="">
-          <div class="precipitation">
-            {} %
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="evening">evening</div>
-      <div class="evening_temp">
-        <div class="evening_temp_icon">
-          <img src="" alt="">
-          <div class="precipitation">
-            {} %
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="overnight">overnight</div>
-      <div class="overnight_temp">
-        <div class="overnight_temp_icon">
-          <img src="" alt="">
-          <div class="precipitation">
-            {} %
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="full_day_forcast">
-    <a href="">full day forcast</a>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#">Go somewhere</a>
   </div>
 </div>
 <%- include("footer") -%>  
