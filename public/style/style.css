@@ -9,4 +9,13 @@
 .card h5{
     font-weight: bolder;
     opacity: 1;
+    text-align: center;
+}
+.icon{
+    display: inline-block;
+}
+#temp{
+    display: inline-block;
+    font-size: larger;
+    font-size: 50%;
 }

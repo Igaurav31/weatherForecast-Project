@@ -11,7 +11,7 @@ var _ = require('lodash');
 app.set('view engine', 'ejs');
 // const convertor = require(__dirname + "/functions.js");
 // const coordinates = [{lat:18.521428 , lon:73.8544541}]
-
+// var dataset = {"hello":"world"};
 
 app.get("/", function (req, res) {
   let pagename = "";
@@ -22,7 +22,7 @@ app.post("/", function (req, res) {
   let cityname = req.body.city;        // get data  
   const appid = "cda42f7250658a1b71b1be2a21958b39";
   let coordinatelink = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityname + "&limit=1&appid=" + appid + "";
-  fetch(coordinatelink)
+   fetch(coordinatelink)
     .then(response => response.json())
     .then(data => {
       // const coords = [{lat : data[0].lat ,
@@ -50,10 +50,12 @@ app.post("/", function (req, res) {
       var sunsetMinutes = "0" + sunsetDate.getMinutes();
       var sunsetSeconds = "0" + sunsetDate.getSeconds();
       var sunsetFormattedTime = sunsetHours + ':' + sunsetMinutes.substr(-2) + ':' + sunsetSeconds.substr(-2);
-      // res.redirect("http://localhost:3000/"+"cityname+");4
-      // res.redirect("http://localhost:3000");
-    });
+      dataset = JSON.stringify(data);
+      let iconurl = "http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png"
     
+      res.render("searchloc",{cityname:cityname,icon:iconurl,currenttemp:data.current.temp});
+      
+    })
   
 });
 
@@ -65,8 +67,9 @@ app.get("/searchloc",function(req,res){
 
 app.post("/searchloc", function(req,res){
   cityname = req.body.city;
-  let iconurl = "http://openweathermap.org/img/wn/"+ data.current.weather[0].icon+"@2x.png"
-  res.render("searchloc",{cityname:cityname, icon:iconurl});
+  // let iconurl = "http://openweathermap.org/img/wn/"+ dataset.current.weather[0].icon+"@2x.png"
+  let iconurl = "http://openweathermap.org/img/wn/"+ data.current.weather[0].icon+ "@2x.png"
+  res.render("searchloc",{cityname:cityname,icon:iconurl});
 })
 
 
