@@ -1,7 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* nav {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  } */
+  
+/* nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  } */
+  
+  nav a:hover {
+    background: #ddd;
+    color: black;
+  }
 .card {
     color: white;
     background-color: rgb(0, 0, 0.3);
-    opacity: 0.5;
+    opacity: 0.7;
     margin: 0 auto; 
     float: none; 
     margin-bottom: 10px; 
@@ -26,4 +52,17 @@
 }
 .description{
     text-transform: capitalize;
+}
+.table{
+    color: white;
+    background-color: rgb(0, 0, 0.3);
+    opacity: 0.7;
+}
+.heading{
+    color: white;
+
+}
+span{
+    background-color: black;
+    opacity: 0.6;
 }

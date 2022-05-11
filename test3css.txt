@@ -1,5 +1,4 @@
 <%- include("header") -%>
-<section id="current">
   <div class="card" style="width: 18rem;">
     <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
     <div class="card-body">
@@ -19,7 +18,7 @@
       <div class="feels_like">
         Feels like: <%=feels_like%> °C
       </div>
-      <div class="wind" >
+      <div class="wind">
         Wind speed: <%=wind%> m/s
       </div>
       <div class="visibility">
@@ -35,14 +34,14 @@
         UVI: <%=uvi%>
       </div>
 
-  </div>
-</section>
-<section id="daily">
-<br>
-<br>
-<div class="heading"><h1><span>Daily:</span></h1></div>
-<br>
+      <p class="card-text"></p>
 
+      <a href="http://localhost:3000/">Home</a>
+    </div>
+  </div>
+<br>
+<div class="heading"><h1>Daily:</h1></div>
+<br>
   <div class="card-group">
     <div class="card">
       
@@ -130,140 +129,4 @@
     </div>
     
   </div>
-</section>
-<section id="hourly">
-  <br>
-  <div class="heading"><h1><span>Hourly:</span></h1></div>
-  <br>
-  <div class="hour24">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Time</th>
-          <th scope="col">Description</th>
-          <th scope="col">Maximum</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td><%=time1%></td>
-          <td><%=des1%></td>
-         
-          <td><%=max1%></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td><%=time2%></td>
-          <td><%=des2%></td>
-        
-          <td><%=max2%></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td><%=time3%></td>
-          <td><%=des3%></td>
-        
-          <td><%=max3%></td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td><%=time4%></td>
-          <td><%=des4%></td>
-        
-          <td><%=max4%></td>
-        </tr> <tr>
-          <th scope="row">5</th>
-          <td><%=time5%></td>
-          <td><%=des5%></td>
-        
-          <td><%=max5%></td>
-        </tr> <tr>
-          <th scope="row">6</th>
-          <td><%=time6%></td>
-          <td><%=des6%></td>
-        
-          <td><%=max6%></td>
-        </tr> <tr>
-          <th scope="row">7</th>
-          <td><%=time7%></td>
-          <td><%=des7%></td>
-        
-          <td><%=max7%></td>
-        </tr> <tr>
-          <th scope="row">8</th>
-          <td><%=time8%></td>
-          <td><%=des8%></td>
-        
-          <td><%=max8%></td>
-        </tr> <tr>
-          <th scope="row">9</th>
-          <td><%=time9%></td>
-          <td><%=des9%></td>
-        
-          <td><%=max9%></td>
-        </tr> <tr>
-          <th scope="row">10</th>
-          <td><%=time10%></td>
-          <td><%=des10%></td>
-        
-          <td><%=max10%></td>
-        </tr> <tr>
-          <th scope="row">11</th>
-          <td><%=time11%></td>
-          <td><%=des11%></td>
-        
-          <td><%=max11%></td>
-        </tr> <tr>
-          <th scope="row">12</th>
-          <td><%=time12%></td>
-          <td><%=des12%></td>
-        
-          <td><%=max12%></td>
-        </tr> <tr>
-          <th scope="row">13</th>
-          <td><%=time13%></td>
-          <td><%=des13%></td>
-        
-          <td><%=max13%></td>
-        </tr> <tr>
-          <th scope="row">14</th>
-          <td><%=time14%></td>
-          <td><%=des14%></td>
-        
-          <td><%=max14%></td>
-        </tr> <tr>
-          <th scope="row">15</th>
-          <td><%=time15%></td>
-          <td><%=des15%></td>
-        
-          <td><%=max15%></td>
-        </tr> <tr>
-          <th scope="row">16</th>
-          <td><%=time16%></td>
-          <td><%=des16%></td>
-        
-          <td><%=max16%></td>
-        </tr> <tr>
-          <th scope="row">17</th>
-          <td><%=time17%></td>
-          <td><%=des17%></td>
-        
-          <td><%=max17%></td>
-        </tr> <tr>
-          <th scope="row">18</th>
-          <td><%=time18%></td>
-          <td><%=des18%></td>
-        
-          <td><%=max18%></td>
-        </tr> 
-      </tbody>
-    </table>
-  </div>
-</section>
-  <br>
-  <div class="heading"><h1><span>Day Details:</span></h1></div>
-  <br>
-
-<%- include("footer") -%>
+  <%- include("footer") -%>
