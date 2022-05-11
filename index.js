@@ -37,40 +37,64 @@ app.post("/", function (req, res) {
     })
     .then(responce => responce.json())
     .then(data => {
+      
 
-      const sunrise = data.current.sunrise;
-      var sunriseDate = new Date(sunrise * 1000);
-      var sunriseHours = sunriseDate.getHours();
-      var sunriseMinutes = "0" + sunriseDate.getMinutes();
-      var sunriseSeconds = "0" + sunriseDate.getSeconds();
-      var sunriseFormattedTime = sunriseHours + ':' + sunriseMinutes.substr(-2) + ':' + sunriseSeconds.substr(-2);
-      const sunset = data.current.sunset;
-      var sunsetDate = new Date(sunset * 1000);
-      var sunsetHours = sunsetDate.getHours();
-      var sunsetMinutes = "0" + sunsetDate.getMinutes();
-      var sunsetSeconds = "0" + sunsetDate.getSeconds();
-      var sunsetFormattedTime = sunsetHours + ':' + sunsetMinutes.substr(-2) + ':' + sunsetSeconds.substr(-2);
-      dataset = JSON.stringify(data);
+      function sunrisetime(suntime){
+        var date = new Date(suntime * 1000);
+        var hours = date.getHours();
+        var minutes = "0" + date.getMinutes();
+        var seconds = "0" + date.getSeconds();
+        
+        var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        return formattedTime;
+  
+        }
+      const sunrise = sunrisetime(data.current.sunrise);                              
+      const sunset =  sunrisetime(data.current.sunset);                                
       let iconurl = "http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png"
-    
-      res.render("searchloc",{cityname:cityname,icon:iconurl,currenttemp:data.current.temp});
+
+      //unix to date
+      function unixtodate(unixt){var a = new Date(unixt * 1000);
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var year = a.getFullYear();
+        var month = months[a.getMonth()];
+        var date = a.getDate();
+        var time = month + ' ' + date  ;
+        return time;
+      }
+      let day1 = unixtodate(data.daily[0].dt);
+      let day2 = unixtodate(data.daily[1].dt);
+      let day3 = unixtodate(data.daily[2].dt);
+      let day4 = unixtodate(data.daily[3].dt);
+      let day5 = unixtodate(data.daily[4].dt);
+      let day6 = unixtodate(data.daily[5].dt);
+      let day7 = unixtodate(data.daily[6].dt);
+      let day1icon = "http://openweathermap.org/img/wn/"+ data.daily[0].weather[0].icon +"@2x.png"
+      let day2icon = "http://openweathermap.org/img/wn/"+ data.daily[1].weather[0].icon+"@2x.png"
+      let day3icon = "http://openweathermap.org/img/wn/"+ data.daily[2].weather[0].icon +"@2x.png"
+      let day4icon = "http://openweathermap.org/img/wn/"+ data.daily[3].weather[0].icon +"@2x.png"
+      let day5icon = "http://openweathermap.org/img/wn/"+ data.daily[4].weather[0].icon +"@2x.png"
+      let day6icon = "http://openweathermap.org/img/wn/"+ data.daily[5].weather[0].icon +"@2x.png"
+      let day7icon = "http://openweathermap.org/img/wn/"+ data.daily[6].weather[0].icon +"@2x.png"
+      res.render("searchloc",{cityname:cityname,icon:iconurl,currenttemp:data.current.temp,description:data.current.weather[0].description,feels_like:data.current.feels_like,wind:data.current.wind_speed,visibility:data.current.visibility,pressure:data.current.pressure,dew_point:data.current.dew_point,uvi:data.current.uvi, day1:day1, day2:day2, day3:day3, day4:day4,day5:day5,day6:day6,day7:day7,day1icon:day1icon,day2icon:day2icon,day3icon:day3icon,day4icon:day4icon,day5icon:day5icon,day6icon:day6icon,day7icon:day7icon,day1maxtemp:data.daily[0].temp.max,day2maxtemp:data.daily[1].temp.max,day3maxtemp:data.daily[2].temp.max,day4maxtemp:data.daily[3].temp.max,day5maxtemp:data.daily[4].temp.max,day6maxtemp:data.daily[5].temp.max,day7maxtemp:data.daily[6].temp.max,day1mintemp:data.daily[0].temp.min,day2mintemp:data.daily[1].temp.min,day3mintemp:data.daily[2].temp.min,day4mintemp:data.daily[3].temp.min,day5mintemp:data.daily[4].temp.min,day6mintemp:data.daily[5].temp.min,day7mintemp:data.daily[6].temp.min,day1description:data.daily[0].weather[0].description,day2description:data.daily[1].weather[0].description,day3description:data.daily[2].weather[0].description,day4description:data.daily[3].weather[0].description,day5description:data.daily[4].weather[0].description,day6description:data.daily[5].weather[0].description,day7description:data.daily[6].weather[0].description});
       
     })
   
 });
 
-app.get("/searchloc",function(req,res){
-  //use ejs to embed data and refer to onenote to for editing html
+
+// app.get("/searchloc",function(req,res){
+  
  
   
-})
+// })
 
-app.post("/searchloc", function(req,res){
-  cityname = req.body.city;
-  // let iconurl = "http://openweathermap.org/img/wn/"+ dataset.current.weather[0].icon+"@2x.png"
-  let iconurl = "http://openweathermap.org/img/wn/"+ data.current.weather[0].icon+ "@2x.png"
-  res.render("searchloc",{cityname:cityname,icon:iconurl});
-})
+// app.post("/searchloc", function(req,res){
+//   cityname = req.body.city;
+//   // let iconurl = "http://openweathermap.org/img/wn/"+ dataset.current.weather[0].icon+"@2x.png"
+//   let iconurl = "http://openweathermap.org/img/wn/"+ data.current.weather[0].icon+ "@2x.png"
+//   res.render("searchloc",{cityname:cityname,icon:iconurl});
+// })
 
 
 
