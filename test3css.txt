@@ -1,132 +1,15 @@
-<%- include("header") -%>
-  <div class="card" style="width: 18rem;">
-    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-    <div class="card-body">
-      <h5 class="card-title" style="text-transform: capitalize;">
-        <%=cityname%>
-      </h5>
-      <div class="icon">
-        <img src="<%=icon%>" alt="">
-      </div>
-      <div class="currenttemp">
-        <%=currenttemp%>
-      </div>
-      <div class="unit">°C</div>
-      <div class="description">
-        <%=description%>
-      </div>
-      <div class="feels_like">
-        Feels like: <%=feels_like%> °C
-      </div>
-      <div class="wind">
-        Wind speed: <%=wind%> m/s
-      </div>
-      <div class="visibility">
-        Visibility: <%=visibility%> m
-      </div>
-      <div class="pressure">
-        Pressure: <%=pressure%> hPa
-      </div>
-      <div class="dew_point">
-       Dew point: <%=dew_point%>°
-      </div>
-      <div class="uvi">
-        UVI: <%=uvi%>
-      </div>
-
-      <p class="card-text"></p>
-
-      <a href="http://localhost:3000/">Home</a>
-    </div>
-  </div>
-<br>
-<div class="heading"><h1>Daily:</h1></div>
-<br>
-  <div class="card-group">
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day1%></h5>
-        <div class="day1icon">
-          <img src="<%=day1icon%>" alt="">
-        </div>
-        <div class="day1maxtemp"><%=day1maxtemp%></div>
-        <div class="day1mintemp"><%=day1mintemp%></div>
-        <div class="day1description"><%=day1description%></div>
-      </div>
-    </div>
-    <div class="card">
-    
-      <div class="card-body">
-        <h5 class="card-title"><%=day2%></h5>
-        <div class="day2icon">
-          <img src="<%=day2icon%>" alt="">
-        </div>
-        <div class="day2maxtemp"><%=day2maxtemp%></div>
-        <div class="day2mintemp"><%=day2mintemp%></div>
-        <div class="day2description"><%=day2description%></div>
-      </div>
-    </div>
-    <div class="card">
-    
-      <div class="card-body">
-        <h5 class="card-title"><%=day3%></h5>
-        <div class="day3icon">
-          <img src="<%=day3icon%>" alt="">
-        </div>
-        <div class="day3maxtemp"><%=day3maxtemp%></div>
-        <div class="day3mintemp"><%=day3mintemp%></div>
-        <div class="day3description"><%=day3description%></div>
-      </div>
-    </div>
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day4%></h5>
-        <div class="day4icon">
-          <img src="<%=day4icon%>" alt="">
-        </div>
-        <div class="day4maxtemp"><%=day4maxtemp%></div>
-        <div class="day4mintemp"><%=day4mintemp%></div>
-        <div class="day4description"><%=day4description%></div>
-      </div>
-    </div>
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day5%></h5>
-        <div class="day5icon">
-          <img src="<%=day5icon%>" alt="">
-        </div>
-        <div class="day5maxtemp"><%=day5maxtemp%></div>
-        <div class="day5mintemp"><%=day5mintemp%></div>
-        <div class="day5description"><%=day5description%></div>
-      </div>
-    </div>
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day6%></h5>
-        <div class="day6icon">
-          <img src="<%=day6icon%>" alt="">
-        </div>
-        <div class="day6maxtemp"><%=day6maxtemp%></div>
-        <div class="day6mintemp"><%=day6mintemp%></div>
-        <div class="day6description"><%=day6description%></div>
-      </div>
-    </div>
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day7%></h5>
-        <div class="day7icon">
-          <img src="<%=day7icon%>" alt="">
-        </div>
-        <div class="day7maxtemp"><%=day7maxtemp%></div>
-        <div class="day7mintemp"><%=day7mintemp%></div>
-        <div class="day7description"><%=day7description%></div>
-      </div>
-    </div>
-    
-  </div>
-  <%- include("footer") -%>
+<nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/images/weblogo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Weather.com
+          </a>
+        <ul>
+            <li><a href="http://localhost:3000/">Home</a></li>
+            <li><a href="#daily">Daily</a></li>
+            <li><a href="#hourly">Hourly</a></li>
+        </ul>
+        <form class="" action="/" method="post">
+            <input class="" name="city" type="search" placeholder="Search a city" aria-label="Search" >
+            <button class="" type="submit">Search</button>
+          </form>
+    </nav>
