@@ -13,3 +13,26 @@
             <button class="" type="submit">Search</button>
           </form>
     </nav>
+
+  <!DOCTYPE html>
+<html>
+<body onload="myFunction()">
+
+<script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+getLocation()
+</script>
+
+</body>
+</html>

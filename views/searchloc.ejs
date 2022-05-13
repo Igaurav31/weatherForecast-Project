@@ -1,6 +1,6 @@
 <%- include("header") -%>
 <section id="current">
-  <div class="card" style="width: 18rem;">
+  <div class="jumbotron">
     <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
     <div class="card-body">
       <h5 class="card-title" style="text-transform: capitalize;">
@@ -40,7 +40,7 @@
 <section id="daily">
 <br>
 <br>
-<div class="heading"><h1><span>Daily:</span></h1></div>
+<div class="heading"><h1><span>Daily</span></h1></div>
 <br>
 
   <div class="card-group">
@@ -133,7 +133,7 @@
 </section>
 <section id="hourly">
   <br>
-  <div class="heading"><h1><span>Hourly:</span></h1></div>
+  <div class="heading"><h1><span>Hourly</span></h1></div>
   <br>
   <div class="hour24">
     <table class="table">
@@ -263,26 +263,43 @@
   </div>
 </section>
   <br>
-  <div class="heading"><h1><span>Day Details:</span></h1></div>
+  <div class="heading"><h1><span>Day Details</span></h1></div>
   <br>
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
+          <hr>
           Sunrise: 
           <img src="/images/icons8-sun.png" width="30" height="30" alt="">
           <%=sunrise%>
           <br>
           Sunset: <img src="/images/icons8-sun.png" width="30" height="30" alt="">
           <%=sunset%>
+          <hr>
         </div>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
-        
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          
+
+            <div class="col-md-6">
+ 
+                <div class="progress blue">
+                  <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                  </span>
+                  <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                  </span>
+                  <div class="progress-value">90%</div>
+                </div>
+ 
+            </div>
+           
+        </div>
         
         </div>
       </div>
