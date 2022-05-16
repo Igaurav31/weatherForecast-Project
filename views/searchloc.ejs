@@ -1,309 +1,579 @@
 <%- include("header") -%>
-<section id="current">
-  <div class="jumbotron">
-    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-    <div class="card-body">
-      <h5 class="card-title" style="text-transform: capitalize;">
-        <%=cityname%>
-      </h5>
-      <div class="icon">
-        <img src="<%=icon%>" alt="">
+
+  <section id="current">
+    <div class="card" style="width: 18rem; margin-top: 7rem;"">
+    <!-- <img class=" card-img-top" src="..." alt="Card image cap"> -->
+      <div class="card-body">
+        <h5 class="card-title" style="text-transform: capitalize; font-size: x-large; font-family: cursive;">
+          <%=cityname%>
+        </h5>
+        <div class="icon" style="display:flex; align-items:center;">
+          <img src="<%=icon%>" alt="">
+          <p class="currenttemp" style="font-family:'Macondo', cursive;font-size: xxx-large;">
+            <%=currenttemp%>
+          </p>
+          <div class="unit">°C</div>
+        </div>
+        <div>
+          <%=description%>
+        </div>
+
+        <div class="description">
+
+        </div>
+        <div class="feels_like">
+          Feels like: <%=feels_like%> °C
+        </div>
+        <div class="wind">
+          Wind speed: <%=wind%> m/s
+        </div>
+        <div class="visibility">
+          Visibility: <%=visibility%> m
+        </div>
+        <div class="pressure">
+          Pressure: <%=pressure%> hPa
+        </div>
+        <div class="dew_point">
+          Dew point: <%=dew_point%>°
+        </div>
+        <div class="uvi">
+          UVI: <%=uvi%>
+        </div>
+
       </div>
-      <div class="currenttemp">
-        <%=currenttemp%>
+  </section>
+  <br>
+  <br>
+  <section id="daily">
+    <h1 class="card df" style="align-items:center; font-family: cursive;font-weight: bold;">Daily Forecast</h1>
+    <div class="card-group">
+      <hr>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%=day1%>
+          </h5>
+          <div class="day1icon">
+            <img src="<%=day1icon%>" alt="">
+          </div>
+          <div class="day1maxtemp">
+            <%=day1maxtemp%>
+          </div>
+          <div class="day1mintemp">
+            <%=day1mintemp%>
+          </div>
+          <div class="day1description">
+            <%=day1description%>
+          </div>
+        </div>
       </div>
-      <div class="unit">°C</div>
-      <div class="description">
-        <%=description%>
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title">
+            <%=day2%>
+          </h5>
+          <div class="day2icon">
+            <img src="<%=day2icon%>" alt="">
+          </div>
+          <div class="day2maxtemp">
+            <%=day2maxtemp%>
+          </div>
+          <div class="day2mintemp">
+            <%=day2mintemp%>
+          </div>
+          <div class="day2description">
+            <%=day2description%>
+          </div>
+        </div>
       </div>
-      <div class="feels_like">
-        Feels like: <%=feels_like%> °C
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title">
+            <%=day3%>
+          </h5>
+          <div class="day3icon">
+            <img src="<%=day3icon%>" alt="">
+          </div>
+          <div class="day3maxtemp">
+            <%=day3maxtemp%>
+          </div>
+          <div class="day3mintemp">
+            <%=day3mintemp%>
+          </div>
+          <div class="day3description">
+            <%=day3description%>
+          </div>
+        </div>
       </div>
-      <div class="wind" >
-        Wind speed: <%=wind%> m/s
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title">
+            <%=day4%>
+          </h5>
+          <div class="day4icon">
+            <img src="<%=day4icon%>" alt="">
+          </div>
+          <div class="day4maxtemp">
+            <%=day4maxtemp%>
+          </div>
+          <div class="day4mintemp">
+            <%=day4mintemp%>
+          </div>
+          <div class="day4description">
+            <%=day4description%>
+          </div>
+        </div>
       </div>
-      <div class="visibility">
-        Visibility: <%=visibility%> m
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title">
+            <%=day5%>
+          </h5>
+          <div class="day5icon">
+            <img src="<%=day5icon%>" alt="">
+          </div>
+          <div class="day5maxtemp">
+            <%=day5maxtemp%>
+          </div>
+          <div class="day5mintemp">
+            <%=day5mintemp%>
+          </div>
+          <div class="day5description">
+            <%=day5description%>
+          </div>
+        </div>
       </div>
-      <div class="pressure">
-        Pressure: <%=pressure%> hPa
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title">
+            <%=day6%>
+          </h5>
+          <div class="day6icon">
+            <img src="<%=day6icon%>" alt="">
+          </div>
+          <div class="day6maxtemp">
+            <%=day6maxtemp%>
+          </div>
+          <div class="day6mintemp">
+            <%=day6mintemp%>
+          </div>
+          <div class="day6description">
+            <%=day6description%>
+          </div>
+        </div>
       </div>
-      <div class="dew_point">
-       Dew point: <%=dew_point%>°
-      </div>
-      <div class="uvi">
-        UVI: <%=uvi%>
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title">
+            <%=day7%>
+          </h5>
+          <div class="day7icon">
+            <img src="<%=day7icon%>" alt="">
+          </div>
+          <div class="day7maxtemp">
+            <%=day7maxtemp%>
+          </div>
+          <div class="day7mintemp">
+            <%=day7mintemp%>
+          </div>
+          <div class="day7description">
+            <%=day7description%>
+          </div>
+        </div>
       </div>
 
-  </div>
-</section>
-<section id="daily">
-<br>
-<br>
-<div class="heading"><h1><span>Daily</span></h1></div>
-<br>
+    </div>
+  </section>
+  <br>
+  <br>
+  <section id="hourly">
 
-  <div class="card-group">
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day1%></h5>
-        <div class="day1icon">
-          <img src="<%=day1icon%>" alt="">
-        </div>
-        <div class="day1maxtemp"><%=day1maxtemp%></div>
-        <div class="day1mintemp"><%=day1mintemp%></div>
-        <div class="day1description"><%=day1description%></div>
-      </div>
+    <div class="hour24">
+      <h1 class="card df" style="align-items: center; font-family:cursive;font-weight: bold;">Hourly</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Time</th>
+            <th scope="col">Description</th>
+            <th scope="col">Maximum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <%=time1%>
+            </td>
+            <td>
+              <%=des1%>
+            </td>
+
+            <td>
+              <%=max1%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <%=time2%>
+            </td>
+            <td>
+              <%=des2%>
+            </td>
+
+            <td>
+              <%=max2%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <%=time3%>
+            </td>
+            <td>
+              <%=des3%>
+            </td>
+
+            <td>
+              <%=max3%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>
+              <%=time4%>
+            </td>
+            <td>
+              <%=des4%>
+            </td>
+
+            <td>
+              <%=max4%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>
+              <%=time5%>
+            </td>
+            <td>
+              <%=des5%>
+            </td>
+
+            <td>
+              <%=max5%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>
+              <%=time6%>
+            </td>
+            <td>
+              <%=des6%>
+            </td>
+
+            <td>
+              <%=max6%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>
+              <%=time7%>
+            </td>
+            <td>
+              <%=des7%>
+            </td>
+
+            <td>
+              <%=max7%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>
+              <%=time8%>
+            </td>
+            <td>
+              <%=des8%>
+            </td>
+
+            <td>
+              <%=max8%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>
+              <%=time9%>
+            </td>
+            <td>
+              <%=des9%>
+            </td>
+
+            <td>
+              <%=max9%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>
+              <%=time10%>
+            </td>
+            <td>
+              <%=des10%>
+            </td>
+
+            <td>
+              <%=max10%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td>
+              <%=time11%>
+            </td>
+            <td>
+              <%=des11%>
+            </td>
+
+            <td>
+              <%=max11%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">12</th>
+            <td>
+              <%=time12%>
+            </td>
+            <td>
+              <%=des12%>
+            </td>
+
+            <td>
+              <%=max12%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">13</th>
+            <td>
+              <%=time13%>
+            </td>
+            <td>
+              <%=des13%>
+            </td>
+
+            <td>
+              <%=max13%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">14</th>
+            <td>
+              <%=time14%>
+            </td>
+            <td>
+              <%=des14%>
+            </td>
+
+            <td>
+              <%=max14%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">15</th>
+            <td>
+              <%=time15%>
+            </td>
+            <td>
+              <%=des15%>
+            </td>
+
+            <td>
+              <%=max15%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">16</th>
+            <td>
+              <%=time16%>
+            </td>
+            <td>
+              <%=des16%>
+            </td>
+
+            <td>
+              <%=max16%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">17</th>
+            <td>
+              <%=time17%>
+            </td>
+            <td>
+              <%=des17%>
+            </td>
+
+            <td>
+              <%=max17%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">18</th>
+            <td>
+              <%=time18%>
+            </td>
+            <td>
+              <%=des18%>
+            </td>
+
+            <td>
+              <%=max18%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">19</th>
+            <td>
+              <%=time19%>
+            </td>
+            <td>
+              <%=des19%>
+            </td>
+
+            <td>
+              <%=max19%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">20</th>
+            <td>
+              <%=time20%>
+            </td>
+            <td>
+              <%=des20%>
+            </td>
+
+            <td>
+              <%=max20%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">21</th>
+            <td>
+              <%=time21%>
+            </td>
+            <td>
+              <%=des21%>
+            </td>
+
+            <td>
+              <%=max21%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">22</th>
+            <td>
+              <%=time22%>
+            </td>
+            <td>
+              <%=des22%>
+            </td>
+
+            <td>
+              <%=max22%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">23</th>
+            <td>
+              <%=time23%>
+            </td>
+            <td>
+              <%=des23%>
+            </td>
+
+            <td>
+              <%=max23%>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">24</th>
+            <td>
+              <%=time24%>
+            </td>
+            <td>
+              <%=des24%>
+            </td>
+
+            <td>
+              <%=max24%>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="card">
-    
-      <div class="card-body">
-        <h5 class="card-title"><%=day2%></h5>
-        <div class="day2icon">
-          <img src="<%=day2icon%>" alt="">
-        </div>
-        <div class="day2maxtemp"><%=day2maxtemp%></div>
-        <div class="day2mintemp"><%=day2mintemp%></div>
-        <div class="day2description"><%=day2description%></div>
-      </div>
-    </div>
-    <div class="card">
-    
-      <div class="card-body">
-        <h5 class="card-title"><%=day3%></h5>
-        <div class="day3icon">
-          <img src="<%=day3icon%>" alt="">
-        </div>
-        <div class="day3maxtemp"><%=day3maxtemp%></div>
-        <div class="day3mintemp"><%=day3mintemp%></div>
-        <div class="day3description"><%=day3description%></div>
-      </div>
-    </div>
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day4%></h5>
-        <div class="day4icon">
-          <img src="<%=day4icon%>" alt="">
-        </div>
-        <div class="day4maxtemp"><%=day4maxtemp%></div>
-        <div class="day4mintemp"><%=day4mintemp%></div>
-        <div class="day4description"><%=day4description%></div>
-      </div>
-    </div>
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day5%></h5>
-        <div class="day5icon">
-          <img src="<%=day5icon%>" alt="">
-        </div>
-        <div class="day5maxtemp"><%=day5maxtemp%></div>
-        <div class="day5mintemp"><%=day5mintemp%></div>
-        <div class="day5description"><%=day5description%></div>
-      </div>
-    </div>
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day6%></h5>
-        <div class="day6icon">
-          <img src="<%=day6icon%>" alt="">
-        </div>
-        <div class="day6maxtemp"><%=day6maxtemp%></div>
-        <div class="day6mintemp"><%=day6mintemp%></div>
-        <div class="day6description"><%=day6description%></div>
-      </div>
-    </div>
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title"><%=day7%></h5>
-        <div class="day7icon">
-          <img src="<%=day7icon%>" alt="">
-        </div>
-        <div class="day7maxtemp"><%=day7maxtemp%></div>
-        <div class="day7mintemp"><%=day7mintemp%></div>
-        <div class="day7description"><%=day7description%></div>
-      </div>
-    </div>
-    
-  </div>
-</section>
-<section id="hourly">
-  <br>
-  <div class="heading"><h1><span>Hourly</span></h1></div>
-  <br>
-  <div class="hour24">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Time</th>
-          <th scope="col">Description</th>
-          <th scope="col">Maximum</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td><%=time1%></td>
-          <td><%=des1%></td>
-         
-          <td><%=max1%></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td><%=time2%></td>
-          <td><%=des2%></td>
-        
-          <td><%=max2%></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td><%=time3%></td>
-          <td><%=des3%></td>
-        
-          <td><%=max3%></td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td><%=time4%></td>
-          <td><%=des4%></td>
-        
-          <td><%=max4%></td>
-        </tr> <tr>
-          <th scope="row">5</th>
-          <td><%=time5%></td>
-          <td><%=des5%></td>
-        
-          <td><%=max5%></td>
-        </tr> <tr>
-          <th scope="row">6</th>
-          <td><%=time6%></td>
-          <td><%=des6%></td>
-        
-          <td><%=max6%></td>
-        </tr> <tr>
-          <th scope="row">7</th>
-          <td><%=time7%></td>
-          <td><%=des7%></td>
-        
-          <td><%=max7%></td>
-        </tr> <tr>
-          <th scope="row">8</th>
-          <td><%=time8%></td>
-          <td><%=des8%></td>
-        
-          <td><%=max8%></td>
-        </tr> <tr>
-          <th scope="row">9</th>
-          <td><%=time9%></td>
-          <td><%=des9%></td>
-        
-          <td><%=max9%></td>
-        </tr> <tr>
-          <th scope="row">10</th>
-          <td><%=time10%></td>
-          <td><%=des10%></td>
-        
-          <td><%=max10%></td>
-        </tr> <tr>
-          <th scope="row">11</th>
-          <td><%=time11%></td>
-          <td><%=des11%></td>
-        
-          <td><%=max11%></td>
-        </tr> <tr>
-          <th scope="row">12</th>
-          <td><%=time12%></td>
-          <td><%=des12%></td>
-        
-          <td><%=max12%></td>
-        </tr> <tr>
-          <th scope="row">13</th>
-          <td><%=time13%></td>
-          <td><%=des13%></td>
-        
-          <td><%=max13%></td>
-        </tr> <tr>
-          <th scope="row">14</th>
-          <td><%=time14%></td>
-          <td><%=des14%></td>
-        
-          <td><%=max14%></td>
-        </tr> <tr>
-          <th scope="row">15</th>
-          <td><%=time15%></td>
-          <td><%=des15%></td>
-        
-          <td><%=max15%></td>
-        </tr> <tr>
-          <th scope="row">16</th>
-          <td><%=time16%></td>
-          <td><%=des16%></td>
-        
-          <td><%=max16%></td>
-        </tr> <tr>
-          <th scope="row">17</th>
-          <td><%=time17%></td>
-          <td><%=des17%></td>
-        
-          <td><%=max17%></td>
-        </tr> <tr>
-          <th scope="row">18</th>
-          <td><%=time18%></td>
-          <td><%=des18%></td>
-        
-          <td><%=max18%></td>
-        </tr> 
-      </tbody>
-    </table>
-  </div>
-</section>
-  <br>
-  <div class="heading"><h1><span>Day Details</span></h1></div>
-  <br>
+  </section>
+
+
+
+
   <div class="row">
     <div class="col-sm-6">
+      <h1 class="card 
+      df" style="align-items:center; font-family:cursive;font-weight: bold;">Day Details</h1>
       <div class="card">
         <div class="card-body">
           <hr>
-          Sunrise: 
+          Sunrise:
           <img src="/images/icons8-sun.png" width="30" height="30" alt="">
           <%=sunrise%>
-          <br>
-          Sunset: <img src="/images/icons8-sun.png" width="30" height="30" alt="">
-          <%=sunset%>
-          <hr>
+            <br>
+            Sunset: <img src="/images/icons8-sun.png" width="30" height="30" alt="">
+            <%=sunset%>
+              <hr>
         </div>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
-          
-
-            <div class="col-md-6">
- 
-                <div class="progress blue">
-                  <span class="progress-left">
-                                    <span class="progress-bar"></span>
-                  </span>
-                  <span class="progress-right">
-                                    <span class="progress-bar"></span>
-                  </span>
-                  <div class="progress-value">90%</div>
-                </div>
- 
+          <h3 style="display: inline;
+          padding-left: 40px;">Humidity</h3>
+          <div class="flex-wrapper">
+            <div class="single-chart" style="padding-top: 10px;
+            padding-bottom: 10px;">
+              <svg viewBox="0 0 36 36" class="circular-chart blue">
+                <path class="circle-bg" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="circle" stroke-dasharray="<%=humidity%>, 100" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <text x="18" y="20.35" class="percentage">
+                  <%=humidity%>%
+                </text>
+              </svg>
             </div>
-           
-        </div>
-        
+          </div>
+
         </div>
       </div>
+
     </div>
   </div>
-
-<%- include("footer") -%>
+  </div>
+  </div>
+<style>
+ 
+</style>
+  <%- include("footer") -%>
