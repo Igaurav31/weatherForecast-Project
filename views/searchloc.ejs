@@ -1,9 +1,9 @@
 <%- include("header") -%>
 
   <section id="current">
-    <div class="card" style="width: 18rem; margin-top: 7rem;"">
+    <div class="card" style="width: 18rem; margin-top: 7rem;">
     <!-- <img class=" card-img-top" src="..." alt="Card image cap"> -->
-      <div class="card-body">
+      <div class="card-body" style="width:18.563 rem;">
         <h5 class="card-title" style="text-transform: capitalize; font-size: x-large; font-family: cursive;">
           <%=cityname%>
         </h5>
@@ -17,29 +17,58 @@
         <div>
           <%=description%>
         </div>
+        <hr>
+        <table style="display:inline-block;">
+          <tr>
+            <td>
+              <div class="feels_like" style="display:inline-block;">
+                Feels like: <%=feels_like%>°C
+              </div>
+            </td>
+          </tr>
 
-        <div class="description">
+          <tr>
+            <td>
+              <div class="wind" style="display:inline-block;">
+                Wind: <%=wind%> m/s
+              </div>
+            </td>
+          </tr>
 
-        </div>
-        <div class="feels_like">
-          Feels like: <%=feels_like%> °C
-        </div>
-        <div class="wind">
-          Wind speed: <%=wind%> m/s
-        </div>
-        <div class="visibility">
-          Visibility: <%=visibility%> m
-        </div>
-        <div class="pressure">
-          Pressure: <%=pressure%> hPa
-        </div>
-        <div class="dew_point">
-          Dew point: <%=dew_point%>°
-        </div>
-        <div class="uvi">
-          UVI: <%=uvi%>
-        </div>
+          <tr>
+            <td>
+              <div class="visibility" style="display:inline-block;">
+                Visibility:<%=visibility /1000%>km
+              </div>
+            </td>
+          </tr>
+        </table>
+        <table style="display:inline-block;">
+          <tr>
+            <td>
+              <div class="pressure" style="display:inline-block;">
+                Pressure: <%=pressure%> hPa
+              </div>
+            </td>
+          </tr>
 
+          <tr>
+            <td>
+              <div class="dew_point" style="display:inline-block;">
+                Dew point: <%=dew_point%> °
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="uvi" style="display:inline-block;">
+                UVI: <%=uvi%>
+              </div>
+            </td>
+          </tr>
+
+        </table>
       </div>
   </section>
   <br>
@@ -548,8 +577,14 @@
       <div class="card">
         <div class="card-body">
           <h3 style="display: inline;
-          padding-left: 40px;">Humidity</h3>
+          padding-left: 40px;font-family:cursive;font-weight:bold">Humidity</h3>
+          <h3 style="display: inline;
+          padding-left: 48px;font-family:cursive;font-weight:bold">Cloudiness</h3>
+          <h3 style="display: inline;
+          padding-left: 95px;font-family:cursive;font-weight:bold">UVI</h3>
           <div class="flex-wrapper">
+
+
             <div class="single-chart" style="padding-top: 10px;
             padding-bottom: 10px;">
               <svg viewBox="0 0 36 36" class="circular-chart blue">
@@ -564,16 +599,51 @@
                 </text>
               </svg>
             </div>
+            <div class="single-chart" style="padding-top: 10px;
+            padding-bottom: 10px;">
+              <svg viewBox="0 0 36 36" class="circular-chart blue">
+                <path class="circle-bg" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="circle" stroke-dasharray="<%=clouds%>, 100" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <text x="18" y="20.35" class="percentage">
+                  <%=clouds%>%
+                </text>
+              </svg>
+            </div>
+            <div class="single-chart" style="padding-top: 10px;
+            padding-bottom: 10px;">
+              <svg viewBox="0 0 36 36" class="circular-chart blue">
+                <path class="circle-bg" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="circle" stroke-dasharray="<%=uvi*10%>, 100" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <text x="18" y="20.35" class="percentage">
+                  <%=uvi%>%
+                </text>
+              </svg>
+            </div>
+
           </div>
 
+          <div class="flex-wrapper">
+
+          </div>
+
+
         </div>
+
       </div>
 
     </div>
   </div>
   </div>
   </div>
-<style>
- 
-</style>
+  <style>
+
+  </style>
   <%- include("footer") -%>
