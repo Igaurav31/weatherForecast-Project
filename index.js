@@ -3,10 +3,10 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-const https = require("https");
+// const https = require("https");
 const { json } = require("express/lib/response");
 const fetch = require('node-fetch');
-var _ = require('lodash');
+// var _ = require('lodash');
 const { time } = require("console");
 app.set('view engine', 'ejs');
 // const convertor = require(__dirname + "/functions.js");
@@ -15,8 +15,10 @@ app.set('view engine', 'ejs');
 
 
 app.get("/", function (req, res) {
-  let pagename = "";
-  res.render("index", { pagename: pagename });
+  // let pagename = "";
+  let imgno = Math.floor(Math.random() * 2);
+  res.render("index",{imgno:imgno});
+  // { pagename: pagename }
 })
 //reminder:add code which gives user choice to choose between unit 
 app.post("/", function (req, res) {
@@ -52,8 +54,7 @@ app.post("/", function (req, res) {
       }
       const sunrise = unixtotime(data.current.sunrise);
       const sunset = unixtotime(data.current.sunset);
-      let iconurl = "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png"
-
+      let iconurl =  "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png";
       //unix to date
       function unixtodate(unixt) {
         var a = new Date(unixt * 1000);
@@ -110,16 +111,15 @@ app.post("/", function (req, res) {
       res.render("searchloc", { cityname: cityname, icon: iconurl,sunrise:sunrise,sunset:sunset,currenttemp: data.current.temp, description: data.current.weather[0].description, feels_like: data.current.feels_like, wind: data.current.wind_speed, visibility: data.current.visibility, pressure: data.current.pressure, dew_point: data.current.dew_point, uvi: data.current.uvi, day1: day1, day2: day2, day3: day3, day4: day4, day5: day5, day6: day6, day7: day7, day1icon: day1icon, day2icon: day2icon, day3icon: day3icon, day4icon: day4icon, day5icon: day5icon, day6icon: day6icon, day7icon: day7icon, day1maxtemp: data.daily[0].temp.max, day2maxtemp: data.daily[1].temp.max, day3maxtemp: data.daily[2].temp.max, day4maxtemp: data.daily[3].temp.max, day5maxtemp: data.daily[4].temp.max, day6maxtemp: data.daily[5].temp.max, day7maxtemp: data.daily[6].temp.max, day1mintemp: data.daily[0].temp.min, day2mintemp: data.daily[1].temp.min, day3mintemp: data.daily[2].temp.min, day4mintemp: data.daily[3].temp.min, day5mintemp: data.daily[4].temp.min, day6mintemp: data.daily[5].temp.min, day7mintemp: data.daily[6].temp.min, day1description: data.daily[0].weather[0].description, day2description: data.daily[1].weather[0].description, day3description: data.daily[2].weather[0].description, day4description: data.daily[3].weather[0].description, day5description: data.daily[4].weather[0].description, day6description: data.daily[5].weather[0].description, day7description: data.daily[6].weather[0].description, time1: time1, des1: data.hourly[11].weather[0].description, max1: data.hourly[11].temp, time2: time2, des2: data.hourly[12].weather[0].description, max2: data.hourly[12].temp, time3: time3, des3: data.hourly[13].weather[0].description, max3: data.hourly[13].temp, time4: time4, des4: data.hourly[14].weather[0].description, max4: data.hourly[14].temp, time5: time5, des5: data.hourly[12].weather[0].description, max5: data.hourly[15].temp, time6: time6, des6: data.hourly[16].weather[0].description, max6: data.hourly[16].temp, time7: time7, des7: data.hourly[17].weather[0].description, max7: data.hourly[17].temp, time8: time8, des8: data.hourly[18].weather[0].description, max8: data.hourly[18].temp, time9: time9, des9: data.hourly[19].weather[0].description, max9: data.hourly[19].temp, time10: time10, des10: data.hourly[20].weather[0].description, max10: data.hourly[20].temp, time11: time11, des11: data.hourly[21].weather[0].description, max11: data.hourly[21].temp, time12: time12, des12: data.hourly[22].weather[0].description, max12: data.hourly[22].temp, time13: time13, des13: data.hourly[23].weather[0].description, max13: data.hourly[23].temp, time14: time14, des14: data.hourly[24].weather[0].description, max14: data.hourly[12].temp, time15: time15, des15: data.hourly[25].weather[0].description, max15: data.hourly[25].temp, time16: time16, des16: data.hourly[26].weather[0].description, max16: data.hourly[26].temp, time17: time17, des17: data.hourly[27].weather[0].description, max17: data.hourly[27].temp, time18: time18, des18: data.hourly[28].weather[0].description, max18: data.hourly[28].temp, time19: time19, des19: data.hourly[29].weather[0].description, max19: data.hourly[29].temp, time20: time20, des20: data.hourly[30].weather[0].description, max20: data.hourly[30].temp, time21: time21, des21: data.hourly[31].weather[0].description, max21: data.hourly[31].temp, time22: time22, des22: data.hourly[32].weather[0].description, max22: data.hourly[32].temp, time23: time23, des23: data.hourly[33].weather[0].description, max23: data.hourly[32].temp, time24: time24, des24: data.hourly[33].weather[0].description, max24: data.hourly[33].temp,humidity:humidity, clouds:clouds});
 
     })
-    process.on('unhandledRejection', (err) => {
-      console.error(err);
-    });
-   process.on('uncaughtException', (err) => {
-      console.error(err);
-    });
+    .catch(err => {
+      res.render("err.ejs")
+      console.log('error occured : \n', err) 
+      });
     
    
 
-});
+})
+;
 
 
 // app.get("/searchloc",function(req,res){

@@ -2,7 +2,7 @@
 
   <section id="current">
     <div class="card" style="width: 18rem; margin-top: 7rem;">
-    <!-- <img class=" card-img-top" src="..." alt="Card image cap"> -->
+      <!-- <img class=" card-img-top" src="..." alt="Card image cap"> -->
       <div class="card-body" style="width:18.563 rem;">
         <h5 class="card-title" style="text-transform: capitalize; font-size: x-large; font-family: cursive;">
           <%=cityname%>
@@ -576,74 +576,120 @@
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
-          <h3 style="display: inline;
+          <!-- <h3 style="display: inline;
           padding-left: 40px;font-family:cursive;font-weight:bold">Humidity</h3>
           <h3 style="display: inline;
           padding-left: 48px;font-family:cursive;font-weight:bold">Cloudiness</h3>
           <h3 style="display: inline;
           padding-left: 95px;font-family:cursive;font-weight:bold">UVI</h3>
-          <div class="flex-wrapper">
+          <div class="flex-wrapper"> -->
+          <table class="table" style="table-layout: fixed;
+          word-wrap: break-word;">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Humidity</th>
+                <th scope="col" style="text-align: center;">Cloudiness</th>
+                <th scope="col" style="text-align: center;">UVI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width:10%;">
+                  <center>
+                    <div class="single-chart" style="padding-top: 10px;
+                  padding-bottom: 10px; width: 9.25rem;height: 8.625rem;">
+                      <svg viewBox="0 0 36 36" class="circular-chart blue ">
+                        <path class="circle-bg" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" stroke-dasharray="<%=humidity%>, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentage">
+                          <%=humidity%>%
+                        </text>
+                      </svg>
+                    </div>
+                  </center>
+                </td>
+                <td style="width:10%">
+                  <center>
+                    <div class="single-chart" style="padding-top: 10px;
+                  padding-bottom: 10px; width: 9.25rem;height: 8.625rem;">
+                      <svg viewBox="0 0 36 36" class="circular-chart blue">
+                        <path class="circle-bg" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" stroke-dasharray="<%=clouds%>, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentage">
+                          <%=clouds%>%
+                        </text>
+                      </svg>
+                    </div>
+                  </center>
+                </td>
+                <td style="width:10%">
+                  <center>
+                    <div class="single-chart" style="padding-top: 10px;
+                  padding-bottom: 10px; width: 9.25rem;height: 8.625rem;">
+                      <svg viewBox="0 0 36 36" class="circular-chart blue">
+                        <path class="circle-bg" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" stroke-dasharray="<%=uvi*10%>, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentage">
+                          <%=uvi%>%
+                        </text>
+                      </svg>
+                    </div>
+                  </center>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-
-            <div class="single-chart" style="padding-top: 10px;
-            padding-bottom: 10px;">
-              <svg viewBox="0 0 36 36" class="circular-chart blue">
-                <path class="circle-bg" d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831" />
-                <path class="circle" stroke-dasharray="<%=humidity%>, 100" d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831" />
-                <text x="18" y="20.35" class="percentage">
-                  <%=humidity%>%
-                </text>
-              </svg>
-            </div>
-            <div class="single-chart" style="padding-top: 10px;
-            padding-bottom: 10px;">
-              <svg viewBox="0 0 36 36" class="circular-chart blue">
-                <path class="circle-bg" d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831" />
-                <path class="circle" stroke-dasharray="<%=clouds%>, 100" d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831" />
-                <text x="18" y="20.35" class="percentage">
-                  <%=clouds%>%
-                </text>
-              </svg>
-            </div>
-            <div class="single-chart" style="padding-top: 10px;
-            padding-bottom: 10px;">
-              <svg viewBox="0 0 36 36" class="circular-chart blue">
-                <path class="circle-bg" d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831" />
-                <path class="circle" stroke-dasharray="<%=uvi*10%>, 100" d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831" />
-                <text x="18" y="20.35" class="percentage">
-                  <%=uvi%>%
-                </text>
-              </svg>
-            </div>
-
-          </div>
-
-          <div class="flex-wrapper">
-
-          </div>
-
+        <div class="flex-wrapper">
 
         </div>
+
 
       </div>
 
     </div>
+
+  </div>
   </div>
   </div>
   </div>
   <style>
 
   </style>
-  <%- include("footer") -%>
+  </div>
+
+  <footer class="footer" ">
+    <div class="ct" style="z-index:1;position: absolute;width:100%;">
+      <div class="text-center p-3" style="background-color:  #413F42;padding: 0;">
+        <div>
+          <a class="navbar-brand" href="#">
+            <img src="/images/weblogo.png" width="50" height="50" alt="">
+          </a>
+        </div>
+        <div class="text-white">
+          <p>&copy;2022 Weather.com</p>
+        </div>
+        <div class="text-white">Made with ❤ by Gaurav, Alankar, Sanu and Ganesh ;)</div>
+
+      </div>
+    </div>
+  </footer>
+
+  </div>
+  </body>
+
+
+  </html>
