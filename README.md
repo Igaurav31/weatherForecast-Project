@@ -20,5 +20,6 @@ Making a simple weather forecast website which shows the weather of searched loc
 * Start node server with nodemon: nodemon start
 * Tune to url:``` http://localhost:3000 ```
 
+## Project Screenshots
 
 
