@@ -13,6 +13,7 @@ Making a simple weather forecast website which shows the weather of searched loc
 
 ## Features to be implemented in future
 * The homepage of the website is just blank so when opened, website should ask user for location and should show the current weather information on homepage
+* The website isn't dynamic yet.
 
 ## How to use the project
 * Clone this repo: ```git clone https://github.com/Igaurav31/weatherForecast-Project.git```
