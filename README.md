@@ -32,4 +32,4 @@ Making a simple weather forecast website which shows the weather of searched loc
 
 ![wf5](https://user-images.githubusercontent.com/91722477/177748626-e0ce53fc-fb50-4929-b5bf-4d9bddef0713.png)
 
-Check the website deployed on heroku servers https://limitless-shelf-83830.herokuapp.com/
+Check the website deployed on heroku servers https://limitless-shelf-83830.herokuapp.com/ (Deployment no longer works as Heroku stopped offering free trial plans)
